@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUNO | Salão de Beleza Premium Unisex</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="DUNO - Experiência premium em beleza unisex. Cortes, coloração, barbearia e tratamentos exclusivos em um ambiente sofisticado.">
+    <meta name="keywords" content="salão de beleza, premium, unisex, barbearia, corte feminino, coloração, luxo, DUNO">
+    <meta name="author" content="DUNO Premium">
+    
+    <!-- Preload Hero Image for Instant Load -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=1920">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js Plugins -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- === PERSONALIZAÇÃO RÁPIDA DO CLIENTE ===
+    Instruções:
+    1. Cores: Altere os valores hexadecimais no :root abaixo para mudar a identidade visual.
+    2. WhatsApp: Altere a variável --whatsapp-number e --whatsapp-msg.
+    3. Imagens: Procure por "TROQUE A IMAGEM AQUI" no corpo do HTML para substituir as fotos.
+    4. Logo: Altere o texto "DUNO" na navegação e no footer.
+    5. Mapa: Substitua o link do iframe na seção #contato pelo link do Google Maps do cliente.
+    Tempo estimado: 15-25 minutos
+    -->
+    <style>
+        :root {
+            /* Paleta de Cores Premium - Rose & Silver */
+            --primary-color: #F43F5E;    /* Vibrant Rose */
+            --primary-hover: #E11D48;   /* Darker Rose */
+            --secondary-color: #1E293B;  /* Deep Charcoal */
+            --bg-dark: #0F172A;         /* Slate Black */
+            --bg-light: #F8FAFC;        /* Clean White/Gray */
+            --primary: #F43F5E;
+            --accent: #FDA4AF;          /* Soft Rose */
+            --champagne: #E2E8F0;       /* Light Silver */
+            --amber: #F43F5E;
+            --text-dark: #111111;
+            --text-light: #F9FAFB;
+            --accent-rose: linear-gradient(135deg, #F43F5E 0%, #FDA4AF 100%);
+            --whatsapp-green: #25D366;
+            
+            /* Links e Redes */
+            --whatsapp-number: "5511992876219";
+            --whatsapp-msg: "Olá! Gostaria de agendar um horário no DUNO.";
+        }
+
+        /* Configurações de Tipografia */
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-dark); 
+            color: var(--text-light); 
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+        }
+        h1, h2, h3, .font-serif { 
+            font-family: 'Playfair Display', serif; 
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .micro-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        /* Responsive Typography Refinements */
+        @media (max-width: 1024px) {
+            h1 { font-size: 4rem; }
+            h2 { font-size: 3rem; }
+        }
+        @media (max-width: 768px) {
+            body { font-size: 15px; line-height: 1.6; }
+            h1 { font-size: 3rem; line-height: 1.1; }
+            h2 { font-size: 2.5rem; line-height: 1.15; }
+            h3 { font-size: 1.5rem; }
+            .micro-label { font-size: 0.6rem; letter-spacing: 0.25em; }
+        }
+        @media (max-width: 480px) {
+            body { font-size: 14px; }
+            h1 { font-size: 2.25rem !important; }
+            h2 { font-size: 1.85rem !important; }
+            h3 { font-size: 1.5rem !important; }
+            .micro-label { font-size: 0.55rem; letter-spacing: 0.2em; }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 10px; }
+
+        /* Splash Screen */
+        #splash-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: var(--bg-dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease-out, visibility 0.8s;
+        }
+
+        .progress-bar-container {
+            width: 200px;
+            height: 2px;
+            background: rgba(244, 63, 94, 0.2);
+            margin-top: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--primary-color);
+            transition: width 0.4s ease;
+        }
+
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .rose-glow:hover {
+            box-shadow: 0 0 20px rgba(244, 63, 94, 0.4);
+            transform: scale(1.02);
+        }
+
+        /* WhatsApp Pulse */
+        @keyframes pulse-whatsapp {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            z-index: 1000;
+            animation: pulse-whatsapp 2s infinite;
+            transition: all 0.3s;
+        }
+
+        /* Quiz Styles */
+        .quiz-step { display: none; }
+        .quiz-step.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Custom Utilities */
+        .bg-rose-gradient { background: var(--accent-rose); }
+        .text-rose { color: var(--primary-color); }
+        .border-rose { border-color: var(--primary-color); }
+        .btn-rose { 
+            background-color: var(--primary-color); 
+            color: white; 
+            font-weight: 800; 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 10px 20px -10px rgba(244, 63, 94, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-rose::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+            opacity: 0;
+        }
+        .btn-rose:hover::after {
+            opacity: 1;
+            left: 100%;
+            top: 100%;
+        }
+        .btn-rose:hover { 
+            background-color: var(--primary-hover); 
+            transform: translateY(-4px) scale(1.02); 
+            box-shadow: 0 15px 30px -10px rgba(244, 63, 94, 0.6);
+        }
+        .btn-rose:active {
+            transform: translateY(0) scale(0.95);
+        }
+
+        /* Button Pulse Animation */
+        @keyframes btn-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(244, 63, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(244, 63, 94, 0); }
+        }
+        .btn-pulse {
+            animation: btn-pulse 2s infinite;
+        }
+        /* Full-screen Mobile Menu */
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2rem 1.5rem 4rem;
+            gap: 2rem;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateX(100%);
+            overflow-y: auto;
+        }
+        .mobile-menu-overlay.active {
+            transform: translateX(0);
+        }
+        .mobile-menu-link {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-style: italic;
+            color: var(--text-light);
+            transition: all 0.4s;
+            text-align: center;
+            width: 100%;
+            padding: 0.5rem 0;
+            letter-spacing: 0.05em;
+        }
+        .mobile-menu-link:active {
+            color: var(--rose-500);
+            transform: scale(0.95);
+        }
+        .mobile-menu-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Bottom Nav Mobile */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(15px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-around;
+            padding: 0.75rem 0;
+            z-index: 40;
+            display: none;
+        }
+        .bottom-nav a:active {
+            transform: scale(0.9);
+            transition: transform 0.2s;
+        }
+        @media (max-width: 768px) {
+            .bottom-nav { display: flex; }
+            body { padding-bottom: 70px; }
+        }
+
+        /* Texture Overlay */
+        .texture-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9998;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Gallery Grid */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            aspect-ratio: 1;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-cover: cover;
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Texture Overlay -->
+    <div class="texture-overlay"></div>
+
+    <!-- Splash Screen Removed for Instant Load -->
+
+    <!-- Header / Navigation -->
+    <header x-data="{ atTop: true, mobileMenu: false }" 
+            @scroll.window="atTop = (window.pageYOffset > 50 ? false : true)"
+            :class="atTop ? 'bg-transparent' : 'bg-black/90 backdrop-blur-md border-b border-white/10'"
+            class="fixed top-0 w-full z-50 transition-all duration-500 py-3 md:py-4 px-4 md:px-12 flex justify-between items-center">
+        
+        <a href="#" class="text-2xl md:text-3xl font-serif text-rose-500 tracking-tighter font-bold">DUNO</a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden lg:flex gap-6 items-center">
+            <a href="#sobre" class="micro-label !text-white hover:!text-rose-400 transition-colors">Sobre</a>
+            <a href="#servicos" class="micro-label !text-white hover:!text-rose-400 transition-colors">Serviços</a>
+            <a href="#antes-depois" class="micro-label !text-white hover:!text-rose-400 transition-colors">Resultados</a>
+            <a href="#galeria" class="micro-label !text-white hover:!text-rose-400 transition-colors">Galeria</a>
+            <a href="#depoimentos" class="micro-label !text-white hover:!text-rose-400 transition-colors">Depoimentos</a>
+            <a href="#faq" class="micro-label !text-white hover:!text-rose-400 transition-colors">Dúvidas</a>
+            <a href="#contato" class="micro-label !text-white hover:!text-rose-400 transition-colors">Localização</a>
+            <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose px-6 py-2 rounded-full !text-[10px]">Agendar</a>
+        </nav>
+
+        <!-- Mobile Toggle -->
+        <button @click="mobileMenu = !mobileMenu" class="lg:hidden text-rose-500 text-2xl relative z-[101]">
+            <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars-staggered'"></i>
+        </button>
+
+        <!-- Mobile Menu Overlay -->
+        <div :class="mobileMenu ? 'active' : ''" class="mobile-menu-overlay lg:hidden">
+            <!-- Menu Header -->
+            <div class="w-full flex justify-between items-center mb-8 shrink-0">
+                <span class="text-2xl font-serif text-rose-500 font-bold">DUNO</span>
+                <button @click="mobileMenu = false" class="text-white text-3xl p-2">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Menu Links -->
+            <div class="w-full flex flex-col items-center gap-2">
+                <a @click="mobileMenu = false" href="#sobre" class="mobile-menu-link border-b border-white/5">Sobre</a>
+                <a @click="mobileMenu = false" href="#servicos" class="mobile-menu-link border-b border-white/5">Serviços</a>
+                <a @click="mobileMenu = false" href="#antes-depois" class="mobile-menu-link border-b border-white/5">Resultados</a>
+                <a @click="mobileMenu = false" href="#galeria" class="mobile-menu-link border-b border-white/5">Galeria</a>
+                <a @click="mobileMenu = false" href="#depoimentos" class="mobile-menu-link border-b border-white/5">Depoimentos</a>
+                <a @click="mobileMenu = false" href="#faq" class="mobile-menu-link border-b border-white/5">Dúvidas</a>
+                <a @click="mobileMenu = false" href="#contato" class="mobile-menu-link border-b border-white/5">Localização</a>
+            </div>
+            
+            <!-- Menu Footer -->
+            <div class="mt-auto pt-8 flex flex-col gap-6 w-full max-w-xs mx-auto shrink-0">
+                <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose btn-pulse py-4 rounded-full text-center text-sm">
+                    <span>Agendar Experiência</span>
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                </a>
+                <div class="flex justify-center gap-10 text-3xl text-rose-500">
+                    <a href="#" class="hover:scale-110 transition-transform"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:scale-110 transition-transform"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+                <p class="text-white/30 text-[10px] text-center uppercase tracking-[0.3em]">Exclusividade & Estilo</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- TROQUE A IMAGEM AQUI - Background do Hero -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=1920" 
+                 alt="Salão DUNO Premium" class="w-full h-full object-cover opacity-60" id="hero-img" fetchpriority="high" referrerPolicy="no-referrer">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-[var(--bg-dark)]"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 md:px-6 max-w-5xl pt-32 md:pt-48">
+            <span class="micro-label mb-6 !text-rose-500 !text-[10px] md:!text-xs tracking-[0.6em]">Redefinindo a Experiência de Luxo</span>
+            <h1 class="text-4xl md:text-8xl mb-8 leading-[1.1] md:leading-[1.05] text-white tracking-tighter">A Arte da Transformação, <br class="hidden md:block"> <span class="italic text-rose-500">A Essência do Estilo.</span></h1>
+            <p class="text-gray-200 text-base md:text-2xl mb-12 max-w-3xl mx-auto font-light leading-relaxed">Um santuário de sofisticação onde a técnica magistral encontra o atendimento exclusivo. Descubra a harmonia perfeita para todos os gêneros.</p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose px-14 py-6 rounded-full w-full md:w-auto rose-glow text-sm">
+                    <span>Agendar Experiência</span>
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                </a>
+                <a href="#servicos" class="backdrop-blur-sm bg-white/5 border border-white/20 hover:border-rose-500 hover:bg-white/10 px-14 py-6 rounded-full w-full md:w-auto transition-all uppercase tracking-widest text-xs font-bold">
+                    Descobrir Serviços
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-rose-500/50">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-16 md:py-24 px-4 md:px-12 bg-white text-black">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div class="reveal">
+                <span class="micro-label mb-3 md:mb-4">A Essência DUNO</span>
+                <h2 class="text-3xl md:text-5xl lg:text-6xl mb-6 md:mb-8 leading-tight">Onde a Tradição encontra a <span class="italic font-serif">Vanguarda.</span></h2>
+                <p class="text-gray-700 text-sm md:text-lg mb-4 md:mb-6 leading-relaxed">No DUNO, acreditamos que a beleza não tem gênero, mas tem padrão: o mais alto possível. Nosso espaço foi projetado para oferecer conforto absoluto enquanto nossos especialistas transformam sua imagem.</p>
+                <p class="text-gray-700 text-sm md:text-lg mb-8 md:mb-10 leading-relaxed">Utilizamos apenas produtos de elite mundial, garantindo resultados que não apenas impressionam, mas perduram. Seja para um corte clássico masculino ou uma coloração feminina complexa, o DUNO é o seu destino.</p>
+                
+                <div class="grid grid-cols-2 gap-8 mb-12">
+                    <div>
+                        <h3 class="text-4xl font-bold text-rose-500 mb-2 counter" data-target="15">0</h3>
+                        <p class="micro-label !text-gray-400 !tracking-widest">Anos de Experiência</p>
+                    </div>
+                    <div>
+                        <h3 class="text-4xl font-bold text-rose-500 mb-2 counter" data-target="12000">0</h3>
+                        <p class="micro-label !text-gray-400 !tracking-widest">Clientes Satisfeitos</p>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose btn-pulse px-10 py-5 rounded-lg inline-flex">
+                    <span>Agendar Experiência Premium</span>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+            
+            <div class="relative reveal">
+                <!-- TROQUE A IMAGEM AQUI - Foto do Salão/Equipe -->
+                <div class="aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=800" 
+                         alt="Interior DUNO" class="w-full h-full object-cover" loading="lazy" referrerPolicy="no-referrer">
+                </div>
+                <div class="absolute -bottom-10 -left-10 bg-rose-gradient p-8 rounded-2xl hidden md:block">
+                    <p class="font-serif text-2xl italic text-black">"Beleza é a <br> confiança em <br> ser você mesmo."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visagismo Section -->
+    <section class="py-20 md:py-24 px-4 md:px-12 bg-[#050505] text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div class="order-2 md:order-1 reveal">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f80d91f2?auto=format&fit=crop&q=80&w=800" 
+                         alt="Visagismo" class="rounded-2xl shadow-2xl relative z-10" loading="lazy" referrerPolicy="no-referrer">
+                    <div class="absolute -top-10 -left-10 w-64 h-64 bg-rose-500/10 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 reveal">
+                <span class="micro-label mb-4">A Ciência da Imagem</span>
+                <h2 class="text-3xl md:text-5xl lg:text-6xl mb-6 md:mb-8">Visagismo: <br> <span class="italic text-rose-500">Sua Identidade Revelada.</span></h2>
+                <p class="text-gray-400 text-base md:text-lg mb-6 md:mb-8 leading-relaxed">Não apenas cortamos cabelos; desenhamos identidades. Através do visagismo, analisamos suas proporções faciais, tom de pele e personalidade para criar um visual que comunica quem você realmente é.</p>
+                <ul class="space-y-3 md:space-y-4 mb-8 md:mb-10">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-rose-500"></i> Análise de Proporções Faciais</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-rose-500"></i> Coloração Pessoal</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-rose-500"></i> Design de Corte Estruturado</li>
+                </ul>
+                <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose px-10 py-5 rounded-lg">Quero uma Consultoria</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-20 md:py-24 px-4 md:px-12 bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 md:mb-20 reveal">
+                <span class="micro-label mb-4">Nossos Serviços</span>
+                <h2 class="text-3xl md:text-5xl lg:text-6xl mb-6 italic">Excelência em Cada Detalhe</h2>
+                <div class="w-20 h-1 bg-rose-gradient mx-auto mb-6 md:mb-8"></div>
+                <p class="text-base md:text-lg text-gray-400 max-w-4xl mx-auto leading-relaxed italic">Um salão de beleza ideal para quem procura adequar a imagem pessoal as suas principais necessidades, com assessoria especializada em um ambiente sofisticado e com atendimento personalizado. Solicite orçamento em nossa recepção.</p>
+            </div>
+
+            <div class="space-y-24 md:space-y-32">
+                <!-- Category: Feminino -->
+                <div class="reveal">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 border-b border-white/10 pb-6 md:pb-8 gap-4 md:gap-6">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-[0.5em] font-bold text-rose-500 mb-3 md:mb-4 block">01 / Estética & Arte</span>
+                            <h2 class="text-4xl md:text-6xl lg:text-7xl font-serif uppercase tracking-tighter text-white">Serviços <br> <span class="italic text-rose-500">Femininos</span></h2>
+                        </div>
+                        <p class="text-gray-500 max-w-xs text-xs md:text-sm leading-relaxed italic">
+                            Técnicas avançadas de visagismo e colorimetria para realçar sua beleza natural com sofisticação.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
+                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Corte de Cabelo Feminino</h4>
+                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Cortes personalizados que valorizam seu rosto e estilo pessoal.</p>
+                            </div>
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 65</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <div class="flex items-center gap-3">
+                                    <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Coloração Completa</h4>
+                                    <span class="text-[8px] bg-rose-500 text-black px-2 py-0.5 font-bold uppercase tracking-tighter rounded-sm">Destaque</span>
+                                </div>
+                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Transformação total da cor com produtos que preservam a saúde dos fios.</p>
+                            </div>
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 130</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Mechas / Luzes / Balayage</h4>
+                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Técnicas avançadas de iluminação para um resultado natural e brilhante.</p>
+                            </div>
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 180</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Escova Simples</h4>
+                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Finalização perfeita para o dia a dia ou ocasiões especiais.</p>
+                            </div>
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 45</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Masculino -->
+                <div class="reveal">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 border-b border-white/10 pb-6 md:pb-8 gap-4 md:gap-6">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-[0.5em] font-bold text-rose-500 mb-3 md:mb-4 block">02 / Design & Precisão</span>
+                            <h2 class="text-4xl md:text-6xl lg:text-7xl font-serif uppercase tracking-tighter text-white">Serviços <br> <span class="italic text-rose-500">Masculinos</span></h2>
+                        </div>
+                        <p class="text-gray-500 max-w-xs text-xs md:text-sm leading-relaxed italic">
+                            Onde a tradição da barbearia encontra o visagismo moderno para o homem contemporâneo.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
+                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Corte de Cabelo Masculino</h4>
+                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Corte moderno com técnicas de visagismo para o homem contemporâneo.</p>
+                            </div>
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 45</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <div class="flex items-center gap-3">
+                                    <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Corte + Barba</h4>
+                                    <span class="text-[8px] bg-rose-500 text-black px-2 py-0.5 font-bold uppercase tracking-tighter rounded-sm">Popular</span>
+                                </div>
+                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Combo completo para renovar o visual com acabamento impecável.</p>
+                            </div>
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 70</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Modelagem de Barba</h4>
+                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Design e alinhamento de barba com toalha quente e produtos premium.</p>
+                            </div>
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 35</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Coloração de Barba</h4>
+                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Cobertura de fios brancos ou realce da cor natural da barba.</p>
+                            </div>
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 60</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Unisex / Comuns -->
+                <div class="reveal">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 border-b border-white/10 pb-6 md:pb-8 gap-4 md:gap-6">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-[0.5em] font-bold text-rose-500 mb-3 md:mb-4 block">03 / Bem-Estar & Cuidados</span>
+                            <h2 class="text-4xl md:text-6xl lg:text-7xl font-serif uppercase tracking-tighter text-white">Unisex <br> <span class="italic text-rose-500">& Comuns</span></h2>
+                        </div>
+                        <p class="text-gray-500 max-w-xs text-xs md:text-sm leading-relaxed italic">
+                            Cuidados essenciais e tratamentos profundos para manter sua imagem sempre impecável.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
+                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Hidratação Capilar</h4>
+                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Reposição de água e nutrientes para fios macios e brilhantes.</p>
+                            </div>
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 75</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Reconstrução / Cauterização</h4>
+                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Tratamento profundo para cabelos danificados ou quimicamente tratados.</p>
+                            </div>
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 95</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Manicure Tradicional</h4>
+                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Cuidado completo das unhas com esmaltação impecável.</p>
+                            </div>
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 35</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Pedicure Tradicional</h4>
+                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Tratamento relaxante e estético para os pés.</p>
+                            </div>
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 40</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <div class="flex items-center gap-3">
+                                    <h4 class="text-2xl md:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Manicure + Pedicure</h4>
+                                    <span class="text-[8px] bg-rose-500 text-black px-2 py-0.5 font-bold uppercase tracking-tighter rounded-sm">Combo</span>
+                                </div>
+                                <p class="text-gray-500 text-sm max-w-xl leading-relaxed">Combo completo de cuidados para mãos e pés.</p>
+                            </div>
+                            <div class="flex items-center gap-6">
+                                <span class="text-xl md:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 70</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <h4 class="text-2xl md:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Design de Sobrancelhas</h4>
+                                <p class="text-gray-500 text-sm max-w-xl leading-relaxed">Harmonização do olhar com técnicas de medição facial.</p>
+                            </div>
+                            <div class="flex items-center gap-6">
+                                <span class="text-xl md:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 25</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <h4 class="text-2xl md:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Depilação com Cera</h4>
+                                <p class="text-gray-500 text-sm max-w-xl leading-relaxed">Remoção de pelos com cera morna (axilas / virilha / pernas).</p>
+                            </div>
+                            <div class="flex items-center gap-6">
+                                <span class="text-xl md:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 30</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <h4 class="text-2xl md:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Massagem Relaxante Capilar</h4>
+                                <p class="text-gray-500 text-sm max-w-xl leading-relaxed">Alívio de tensões com massagem estimulante no couro cabeludo.</p>
+                            </div>
+                            <div class="flex items-center gap-6">
+                                <span class="text-xl md:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 50</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <h4 class="text-2xl md:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Selagem / Progressiva</h4>
+                                <p class="text-gray-500 text-sm max-w-xl leading-relaxed">Alinhamento capilar e redução de volume com brilho intenso.</p>
+                            </div>
+                            <div class="flex items-center gap-6">
+                                <span class="text-xl md:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 150</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
+                            <div>
+                                <h4 class="text-2xl md:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Tonalizante</h4>
+                                <p class="text-gray-500 text-sm max-w-xl leading-relaxed">Banho de brilho e realce da cor sem amônia.</p>
+                            </div>
+                            <div class="flex items-center gap-6">
+                                <span class="text-xl md:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 80</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Antes e Depois -->
+    <section id="antes-depois" class="py-16 md:py-24 px-4 md:px-12 bg-white text-black overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-16 reveal">
+                <div class="max-w-xl">
+                    <span class="micro-label mb-3 md:mb-4">Resultados Reais</span>
+                    <h2 class="text-3xl md:text-5xl lg:text-6xl italic leading-tight">Transformações que Inspiram</h2>
+                </div>
+                <div class="hidden md:block">
+                    <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose btn-pulse px-8 py-4 rounded-lg">
+                        <span>Quero este Resultado</span>
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- TROQUE A IMAGEM AQUI - Antes/Depois 1 -->
+                <div class="relative group overflow-hidden rounded-2xl reveal">
+                    <div class="flex">
+                        <div class="w-1/2 relative">
+                            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f80d91f2?auto=format&fit=crop&q=80&w=600" alt="Antes" class="w-full h-[350px] md:h-[500px] object-cover grayscale" loading="lazy" referrerPolicy="no-referrer">
+                            <span class="absolute top-4 left-4 bg-black/50 text-white micro-label !text-white px-3 py-1 rounded">Antes</span>
+                        </div>
+                        <div class="w-1/2 relative">
+                            <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&q=80&w=600" alt="Depois" class="w-full h-[350px] md:h-[500px] object-cover" loading="lazy" referrerPolicy="no-referrer">
+                            <span class="absolute top-4 right-4 bg-rose-500 text-black micro-label !text-black px-3 py-1 rounded">Depois</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                        <p class="font-serif italic text-xl">Coloração & Corte Visagista</p>
+                    </div>
+                </div>
+
+                <!-- TROQUE A IMAGEM AQUI - Antes/Depois 2 -->
+                <div class="relative group overflow-hidden rounded-2xl reveal" style="transition-delay: 0.2s;">
+                    <div class="flex">
+                        <div class="w-1/2 relative">
+                            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=600" alt="Antes" class="w-full h-[350px] md:h-[500px] object-cover grayscale" loading="lazy" referrerPolicy="no-referrer">
+                            <span class="absolute top-4 left-4 bg-black/50 text-white micro-label !text-white px-3 py-1 rounded">Antes</span>
+                        </div>
+                        <div class="w-1/2 relative">
+                            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80&w=600" alt="Depois" class="w-full h-[350px] md:h-[500px] object-cover" loading="lazy" referrerPolicy="no-referrer">
+                            <span class="absolute top-4 right-4 bg-rose-500 text-black micro-label !text-black px-3 py-1 rounded">Depois</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                        <p class="font-serif italic text-xl">Barba Terapia & Fade Moderno</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 md:py-24 bg-white text-black">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-16 reveal">
+                <span class="micro-label mb-3 md:mb-4">Mestres da Transformação</span>
+                <h2 class="text-3xl md:text-5xl lg:text-6xl leading-tight">Nossa <span class="italic">Equipe Elite.</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="reveal group relative overflow-hidden rounded-2xl aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" alt="Ricardo" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <h3 class="text-2xl font-serif text-white mb-1">Ricardo Duno</h3>
+                        <p class="text-rose-500 text-xs uppercase tracking-widest font-bold">Master Visagista</p>
+                    </div>
+                </div>
+                <div class="reveal group relative overflow-hidden rounded-2xl aspect-[3/4]" style="transition-delay: 0.2s">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=600" alt="Elena" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <h3 class="text-2xl font-serif text-white mb-1">Elena Silva</h3>
+                        <p class="text-rose-500 text-xs uppercase tracking-widest font-bold">Especialista em Cor</p>
+                    </div>
+                </div>
+                <div class="reveal group relative overflow-hidden rounded-2xl aspect-[3/4]" style="transition-delay: 0.4s">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=600" alt="Marcus" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <h3 class="text-2xl font-serif text-white mb-1">Marcus Viana</h3>
+                        <p class="text-rose-500 text-xs uppercase tracking-widest font-bold">Barbeiro Executivo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-16 md:py-24 px-4 md:px-12 bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 md:mb-20 reveal">
+                <h2 class="text-3xl md:text-5xl lg:text-6xl italic font-serif leading-tight text-white">Vozes da Experiência</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-black p-8 rounded-2xl border border-white/5 reveal">
+                    <div class="flex text-rose-500 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-400 italic mb-6 leading-relaxed">"O DUNO não é apenas um salão, é um refúgio. O atendimento é impecável e o resultado sempre supera minhas expectativas."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-800 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="User" loading="lazy" referrerPolicy="no-referrer">
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">Ricardo Mendes</p>
+                            <p class="micro-label !text-[8px] !tracking-widest">Empresário</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-black p-8 rounded-2xl border border-white/5 reveal" style="transition-delay: 0.2s;">
+                    <div class="flex text-rose-500 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-400 italic mb-6 leading-relaxed">"Finalmente encontrei um lugar que entende de coloração complexa sem danificar os fios. O DUNO é simplesmente o melhor de SP."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-800 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" alt="User" loading="lazy" referrerPolicy="no-referrer">
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">Mariana Silva</p>
+                            <p class="micro-label !text-[8px] !tracking-widest">Arquiteta</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-black p-8 rounded-2xl border border-white/5 reveal" style="transition-delay: 0.4s;">
+                    <div class="flex text-rose-500 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-400 italic mb-6 leading-relaxed">"Ambiente unisex perfeito. Me sinto super à vontade e o serviço de barboterapia é algo de outro mundo. Recomendo muito!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-800 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150" alt="User" loading="lazy" referrerPolicy="no-referrer">
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">Carlos Eduardo</p>
+                            <p class="micro-label !text-[8px] !tracking-widest">Designer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="py-16 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-center text-gray-400 text-[10px] uppercase tracking-[0.5em] mb-12">Trabalhamos com o que há de melhor no mundo</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
+                <span class="text-2xl md:text-4xl font-bold tracking-tighter text-black">KEUNE</span>
+                <span class="text-2xl md:text-4xl font-bold tracking-tighter text-black">WELLA</span>
+                <span class="text-2xl md:text-4xl font-bold tracking-tighter text-black">L'ORÉAL</span>
+                <span class="text-2xl md:text-4xl font-bold tracking-tighter text-black">KÉRASTASE</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria Section -->
+    <section id="galeria" class="py-16 md:py-24 px-4 md:px-12 bg-[#050505]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 md:mb-16 reveal">
+                <span class="micro-label mb-3 md:mb-4">Galeria de Estilo</span>
+                <h2 class="text-3xl md:text-5xl lg:text-6xl italic font-serif leading-tight text-white">A Arte do Detalhe</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=600" alt="Corte Masculino" loading="lazy" referrerPolicy="no-referrer">
+                    <div class="gallery-overlay">
+                        <p class="text-xs uppercase tracking-widest font-bold">Corte Masculino</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal" style="transition-delay: 0.1s;">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=600" alt="Coloração Feminina" loading="lazy" referrerPolicy="no-referrer">
+                    <div class="gallery-overlay">
+                        <p class="text-xs uppercase tracking-widest font-bold">Coloração</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal" style="transition-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=600" alt="Barboterapia" loading="lazy" referrerPolicy="no-referrer">
+                    <div class="gallery-overlay">
+                        <p class="text-xs uppercase tracking-widest font-bold">Barboterapia</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal" style="transition-delay: 0.3s;">
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=600" alt="Ambiente DUNO" loading="lazy" referrerPolicy="no-referrer">
+                    <div class="gallery-overlay">
+                        <p class="text-xs uppercase tracking-widest font-bold">Ambiente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 md:py-32 px-4 md:px-12 bg-white text-black">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-10 md:mb-16 reveal">
+                <span class="micro-label mb-3 md:mb-4 text-rose-500/70">Tire Suas Dúvidas</span>
+                <h2 class="text-3xl md:text-5xl lg:text-6xl italic font-serif leading-tight">Perguntas Frequentes</h2>
+            </div>
+
+            <div x-data="{ active: null }" class="space-y-2">
+                <div class="border-b border-gray-100 reveal transition-all duration-300" :class="active === 1 ? 'bg-rose-50/50 rounded-xl px-4' : 'px-0'">
+                    <button @click="active = active === 1 ? null : 1" class="w-full py-5 md:py-6 flex justify-between items-center text-left transition-colors group">
+                        <span class="text-base md:text-lg font-medium pr-6 transition-colors" :class="active === 1 ? 'text-rose-600' : 'text-black'">Preciso agendar horário ou atendem por ordem de chegada?</span>
+                        <i class="fa-solid transition-transform duration-300" :class="active === 1 ? 'fa-minus rotate-180 text-rose-600' : 'fa-plus text-gray-300'"></i>
+                    </button>
+                    <div x-show="active === 1" x-collapse class="pb-6 text-gray-500 text-sm md:text-base font-light leading-relaxed">
+                        Para garantir o padrão de excelência e evitar esperas, trabalhamos preferencialmente com agendamento prévio via WhatsApp. No entanto, se houver disponibilidade no momento, teremos prazer em atendê-lo.
+                    </div>
+                </div>
+                <div class="border-b border-gray-100 reveal transition-all duration-300" :class="active === 2 ? 'bg-rose-50/50 rounded-xl px-4' : 'px-0'">
+                    <button @click="active = active === 2 ? null : 2" class="w-full py-5 md:py-6 flex justify-between items-center text-left transition-colors group">
+                        <span class="text-base md:text-lg font-medium pr-6 transition-colors" :class="active === 2 ? 'text-rose-600' : 'text-black'">Quais são as formas de pagamento aceitas?</span>
+                        <i class="fa-solid transition-transform duration-300" :class="active === 2 ? 'fa-minus rotate-180 text-rose-600' : 'fa-plus text-gray-300'"></i>
+                    </button>
+                    <div x-show="active === 2" x-collapse class="pb-6 text-gray-500 text-sm md:text-base font-light leading-relaxed">
+                        Aceitamos todos os cartões de crédito e débito, PIX e dinheiro. Parcelamos procedimentos de maior valor conforme nossa política interna.
+                    </div>
+                </div>
+                <div class="border-b border-gray-100 reveal transition-all duration-300" :class="active === 3 ? 'bg-rose-50/50 rounded-xl px-4' : 'px-0'">
+                    <button @click="active = active === 3 ? null : 3" class="w-full py-5 md:py-6 flex justify-between items-center text-left transition-colors group">
+                        <span class="text-base md:text-lg font-medium pr-6 transition-colors" :class="active === 3 ? 'text-rose-600' : 'text-black'">Qual o horário de funcionamento do salão?</span>
+                        <i class="fa-solid transition-transform duration-300" :class="active === 3 ? 'fa-minus rotate-180 text-rose-600' : 'fa-plus text-gray-300'"></i>
+                    </button>
+                    <div x-show="active === 3" x-collapse class="pb-6 text-gray-500 text-sm md:text-base font-light leading-relaxed">
+                        Nosso horário padrão é de Terça a Sábado, das 09h às 20h. Segundas e feriados funcionamos sob consulta para eventos especiais.
+                    </div>
+                </div>
+                <div class="border-b border-gray-100 reveal transition-all duration-300" :class="active === 4 ? 'bg-rose-50/50 rounded-xl px-4' : 'px-0'">
+                    <button @click="active = active === 4 ? null : 4" class="w-full py-5 md:py-6 flex justify-between items-center text-left transition-colors group">
+                        <span class="text-base md:text-lg font-medium pr-6 transition-colors" :class="active === 4 ? 'text-rose-600' : 'text-black'">Quais marcas de produtos vocês utilizam?</span>
+                        <i class="fa-solid transition-transform duration-300" :class="active === 4 ? 'fa-minus rotate-180 text-rose-600' : 'fa-plus text-gray-300'"></i>
+                    </button>
+                    <div x-show="active === 4" x-collapse class="pb-6 text-gray-500 text-sm md:text-base font-light leading-relaxed">
+                        Trabalhamos exclusivamente com marcas de elite mundial como Kérastase, L'Oréal Professionnel, Redken e Wella, garantindo a saúde e brilho dos seus fios.
+                    </div>
+                </div>
+                <div class="border-b border-gray-100 reveal transition-all duration-300" :class="active === 5 ? 'bg-rose-50/50 rounded-xl px-4' : 'px-0'">
+                    <button @click="active = active === 5 ? null : 5" class="w-full py-5 md:py-6 flex justify-between items-center text-left transition-colors group">
+                        <span class="text-base md:text-lg font-medium pr-6 transition-colors" :class="active === 5 ? 'text-rose-600' : 'text-black'">O salão possui estacionamento ou convênio?</span>
+                        <i class="fa-solid transition-transform duration-300" :class="active === 5 ? 'fa-minus rotate-180 text-rose-600' : 'fa-plus text-gray-300'"></i>
+                    </button>
+                    <div x-show="active === 5" x-collapse class="pb-6 text-gray-500 text-sm md:text-base font-light leading-relaxed">
+                        Sim, possuímos convênio com estacionamento próximo para sua total comodidade e segurança durante sua visita.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato & Mapa Section -->
+    <section id="contato" class="py-20 md:py-24 px-4 md:px-12 bg-white text-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <span class="micro-label mb-4">Localização</span>
+                <h2 class="text-4xl md:text-6xl italic">Onde Estamos</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12 items-start">
+                <div class="md:col-span-1 reveal">
+                    <h3 class="text-2xl font-bold mb-6 text-rose-500">DUNO Premium</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Av. Paulista, 1000 - Jardins<br>
+                        São Paulo - SP, 01310-100
+                    </p>
+                    
+                    <div class="space-y-4 mb-10">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-clock text-rose-500"></i>
+                            <span class="text-sm">Ter - Sáb: 09h às 20h</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-phone text-rose-500"></i>
+                            <span class="text-sm">(11) 99287-6219</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-envelope text-rose-500"></i>
+                            <span class="text-sm">contato@duno.com.br</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose btn-pulse px-8 py-4 rounded-lg inline-block w-full text-center rose-glow">
+                        <span>Reservar meu Horário</span>
+                        <i class="fa-brands fa-whatsapp ml-2 text-lg"></i>
+                    </a>
+                </div>
+                
+                <div class="md:col-span-2 h-[450px] rounded-3xl overflow-hidden shadow-2xl reveal">
+                    <!-- TROQUE O LINK DO MAPA AQUI -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.19758700723!2d-46.65867842375662!3d-23.56134966186458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1711570000000!5m2!1spt-BR!2sbr" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 md:px-12 bg-black border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2">
+                <h2 class="text-4xl font-serif text-rose-500 mb-6">DUNO</h2>
+                <p class="text-gray-500 max-w-sm mb-8 leading-relaxed">Elevando o conceito de beleza e bem-estar através de um atendimento exclusivo e personalizado. Sua jornada de luxo começa aqui.</p>
+                <div class="flex gap-4 text-2xl text-rose-500">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://wa.me/5511992876219" class="hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="micro-label mb-6">Links Rápidos</h4>
+                <ul class="space-y-4 text-gray-500 text-sm">
+                    <li><a href="#sobre" class="hover:text-white transition-colors">Sobre Nós</a></li>
+                    <li><a href="#servicos" class="hover:text-white transition-colors">Serviços</a></li>
+                    <li><a href="#antes-depois" class="hover:text-white transition-colors">Resultados</a></li>
+                    <li><a href="#contato" class="hover:text-white transition-colors">Localização</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="micro-label mb-6">Contato</h4>
+                <ul class="space-y-4 text-gray-500 text-sm mb-6">
+                    <li><i class="fa-solid fa-phone mr-2 text-rose-500"></i> (11) 99287-6219</li>
+                    <li><i class="fa-solid fa-envelope mr-2 text-rose-500"></i> contato@duno.com.br</li>
+                    <li><i class="fa-solid fa-location-dot mr-2 text-rose-500"></i> Jardins, São Paulo</li>
+                </ul>
+                <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose btn-pulse px-6 py-3 rounded-lg text-[10px] w-full">
+                    <span>Agendar pelo WhatsApp</span>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-center text-[10px] text-gray-600 uppercase tracking-widest">
+            &copy; 2026 DUNO Premium Experience. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511992876219" target="_blank" class="whatsapp-float hidden md:flex" aria-label="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Bottom Nav Mobile -->
+    <nav class="bottom-nav">
+        <a href="#servicos" class="flex flex-col items-center gap-1 text-gray-400 hover:text-rose-500 transition-colors">
+            <i class="fa-solid fa-scissors text-xl"></i>
+            <span class="text-[10px] uppercase tracking-tighter font-bold">Serviços</span>
+        </a>
+        <a href="https://wa.me/5511992876219" target="_blank" class="flex flex-col items-center gap-1 -mt-8">
+            <div class="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-white text-2xl shadow-2xl border-4 border-[#111]">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <span class="text-[10px] uppercase tracking-tighter font-bold text-[#25D366]">Agendar</span>
+        </a>
+        <a href="#contato" class="flex flex-col items-center gap-1 text-gray-400 hover:text-rose-500 transition-colors">
+            <i class="fa-solid fa-location-dot text-xl"></i>
+            <span class="text-[10px] uppercase tracking-tighter font-bold">Onde</span>
+        </a>
+    </nav>
+
+    <!-- Scripts -->
+    <script>
+        // Splash Screen Removed
+        window.addEventListener('DOMContentLoaded', () => {
+            // No splash logic needed
+        });
+
+        // Intersection Observer for Reveal on Scroll
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll(".reveal").forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const startCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        // Trigger counters when in view
+        const observer = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting) startCounters();
+        }, { threshold: 0.5 });
+        
+        if(counters.length > 0) observer.observe(document.querySelector('#sobre'));
+
+        // Hero Parallax
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImg = document.getElementById('hero-img');
+            heroImg.style.transform = `translateY(${scrolled * 0.3}px) scale(1.05)`;
+        });
+    </script>
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      "name": "DUNO Premium Experience",
+      "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035",
+      "@id": "",
+      "url": "https://duno.com.br",
+      "telephone": "+5511992876219",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Paulista, 1000",
+        "addressLocality": "São Paulo",
+        "postalCode": "01310-100",
+        "addressCountry": "BR"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "20:00"
+      }
+    }
+    </script>
+</body>
+</html>

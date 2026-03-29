@@ -1,0 +1,7 @@
+{
+  "name": "DUNO - Salão de Beleza Premium",
+  "description": "Template white-label luxuoso para salões de beleza e barbearias premium. Foco em conversão via WhatsApp e design sofisticado.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
