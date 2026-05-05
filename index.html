@@ -388,9 +388,9 @@
             
             <!-- Menu Footer -->
             <div class="mt-auto pt-8 flex flex-col gap-6 w-full max-w-xs mx-auto shrink-0">
-                <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose btn-pulse py-4 rounded-full text-center text-sm">
+                <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose py-4 rounded-full text-center text-sm group">
                     <span>Agendar Experiência</span>
-                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <i class="fa-solid fa-arrow-right text-xl transition-transform group-hover:translate-x-1"></i>
                 </a>
                 <div class="flex justify-center gap-10 text-3xl text-rose-500">
                     <a href="#" class="hover:scale-110 transition-transform"><i class="fa-brands fa-instagram"></i></a>
@@ -415,9 +415,9 @@
             <h1 class="text-4xl md:text-8xl mb-8 leading-[1.1] md:leading-[1.05] text-white tracking-tighter">A Arte da Transformação, <br class="hidden md:block"> <span class="italic text-rose-500">A Essência do Estilo.</span></h1>
             <p class="text-gray-200 text-base md:text-2xl mb-12 max-w-3xl mx-auto font-light leading-relaxed">Um santuário de sofisticação onde a técnica magistral encontra o atendimento exclusivo. Descubra a harmonia perfeita para todos os gêneros.</p>
             <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-                <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose px-14 py-6 rounded-full w-full md:w-auto rose-glow text-sm">
+                <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose px-14 py-6 rounded-full w-full md:w-auto rose-glow text-sm group">
                     <span>Agendar Experiência</span>
-                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <i class="fa-solid fa-arrow-right text-xl transition-transform group-hover:translate-x-1"></i>
                 </a>
                 <a href="#servicos" class="backdrop-blur-sm bg-white/5 border border-white/20 hover:border-rose-500 hover:bg-white/10 px-14 py-6 rounded-full w-full md:w-auto transition-all uppercase tracking-widest text-xs font-bold">
                     Descobrir Serviços
@@ -451,9 +451,9 @@
                     </div>
                 </div>
 
-                <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose btn-pulse px-10 py-5 rounded-lg inline-flex">
+                <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose px-10 py-5 rounded-lg inline-flex group shadow-xl">
                     <span>Agendar Experiência Premium</span>
-                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
                 </a>
             </div>
             
@@ -495,285 +495,190 @@
     </section>
 
     <!-- Serviços Section -->
-    <section id="servicos" class="py-20 md:py-24 px-4 md:px-12 bg-[#0a0a0a]">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 md:mb-20 reveal">
+    <section id="servicos" class="py-20 md:py-32 px-4 md:px-12 bg-[#0a0a0a] relative overflow-hidden">
+        <!-- Glow background -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-rose-500/10 rounded-full blur-[150px] pointer-events-none transform translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-rose-500/10 rounded-full blur-[150px] pointer-events-none transform -translate-x-1/2 translate-y-1/2"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 md:mb-24 reveal">
                 <span class="micro-label mb-4">Nossos Serviços</span>
-                <h2 class="text-3xl md:text-5xl lg:text-6xl mb-6 italic">Excelência em Cada Detalhe</h2>
-                <div class="w-20 h-1 bg-rose-gradient mx-auto mb-6 md:mb-8"></div>
-                <p class="text-base md:text-lg text-gray-400 max-w-4xl mx-auto leading-relaxed italic">Um salão de beleza ideal para quem procura adequar a imagem pessoal as suas principais necessidades, com assessoria especializada em um ambiente sofisticado e com atendimento personalizado. Solicite orçamento em nossa recepção.</p>
+                <h2 class="text-4xl md:text-5xl lg:text-7xl mb-6 font-serif italic text-white">Excelência em Detalhes</h2>
+                <div class="w-20 h-1 bg-rose-gradient mx-auto mb-8"></div>
+                <p class="text-base md:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                    Experiência completa com profissionais especializados em visagismo, corte e colorimetria, garantindo o resultado perfeito para você.
+                </p>
             </div>
 
-            <div class="space-y-24 md:space-y-32">
-                <!-- Category: Feminino -->
-                <div class="reveal">
-                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 border-b border-white/10 pb-6 md:pb-8 gap-4 md:gap-6">
-                        <div>
-                            <span class="text-[10px] uppercase tracking-[0.5em] font-bold text-rose-500 mb-3 md:mb-4 block">01 / Estética & Arte</span>
-                            <h2 class="text-4xl md:text-6xl lg:text-7xl font-serif uppercase tracking-tighter text-white">Serviços <br> <span class="italic text-rose-500">Femininos</span></h2>
-                        </div>
-                        <p class="text-gray-500 max-w-xs text-xs md:text-sm leading-relaxed italic">
-                            Técnicas avançadas de visagismo e colorimetria para realçar sua beleza natural com sofisticação.
-                        </p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
-                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Corte de Cabelo Feminino</h4>
-                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Cortes personalizados que valorizam seu rosto e estilo pessoal.</p>
-                            </div>
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 65</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <div class="flex items-center gap-3">
-                                    <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Coloração Completa</h4>
-                                    <span class="text-[8px] bg-rose-500 text-black px-2 py-0.5 font-bold uppercase tracking-tighter rounded-sm">Destaque</span>
-                                </div>
-                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Transformação total da cor com produtos que preservam a saúde dos fios.</p>
-                            </div>
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 130</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Mechas / Luzes / Balayage</h4>
-                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Técnicas avançadas de iluminação para um resultado natural e brilhante.</p>
-                            </div>
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 180</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Escova Simples</h4>
-                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Finalização perfeita para o dia a dia ou ocasiões especiais.</p>
-                            </div>
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 45</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Feminino -->
+            <div class="mb-20 md:mb-28 reveal">
+                <div class="flex items-center gap-6 mb-12">
+                    <h3 class="text-3xl md:text-4xl font-serif text-white uppercase tracking-wider">Feminino</h3>
+                    <div class="h-[1px] flex-1 bg-gradient-to-r from-rose-500/50 to-transparent"></div>
                 </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Service Card -->
+                    <div class="group relative bg-white/[0.02] border border-white/5 hover:border-rose-500/30 backdrop-blur-xl rounded-[2rem] p-8 flex flex-col items-start transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.15)] overflow-hidden">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-transparent border border-rose-500/20 flex items-center justify-center mb-8 text-rose-500 group-hover:scale-110 group-hover:bg-rose-500 group-hover:text-white transition-all duration-500">
+                            <i class="fa-solid fa-scissors text-2xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-serif text-white mb-4 group-hover:text-rose-400 transition-colors">Corte Visagista</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-1">Cortes personalizados baseados na análise do seu formato de rosto e estilo de vida.</p>
+                        <div class="w-full flex items-center justify-between border-t border-white/10 pt-6 mt-auto">
+                            <span class="text-lg font-light text-rose-500 italic">a partir de R$ 65</span>
+                            <a href="https://wa.me/5511992876219" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-rose-500 hover:border-rose-500 transition-all group/btn">
+                                <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover/btn:rotate-0 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
 
-                <!-- Category: Masculino -->
-                <div class="reveal">
-                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 border-b border-white/10 pb-6 md:pb-8 gap-4 md:gap-6">
-                        <div>
-                            <span class="text-[10px] uppercase tracking-[0.5em] font-bold text-rose-500 mb-3 md:mb-4 block">02 / Design & Precisão</span>
-                            <h2 class="text-4xl md:text-6xl lg:text-7xl font-serif uppercase tracking-tighter text-white">Serviços <br> <span class="italic text-rose-500">Masculinos</span></h2>
+                    <!-- Service Card -->
+                    <div class="group relative bg-white/[0.02] border border-white/5 hover:border-rose-500/30 backdrop-blur-xl rounded-[2rem] p-8 flex flex-col items-start transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.15)] overflow-hidden">
+                        <div class="absolute top-6 right-6 px-3 py-1 bg-rose-500 text-black text-[10px] font-bold uppercase tracking-wider rounded-full">Destaque</div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-transparent border border-rose-500/20 flex items-center justify-center mb-8 text-rose-500 group-hover:scale-110 group-hover:bg-rose-500 group-hover:text-white transition-all duration-500">
+                            <i class="fa-solid fa-palette text-2xl"></i>
                         </div>
-                        <p class="text-gray-500 max-w-xs text-xs md:text-sm leading-relaxed italic">
-                            Onde a tradição da barbearia encontra o visagismo moderno para o homem contemporâneo.
-                        </p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
-                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Corte de Cabelo Masculino</h4>
-                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Corte moderno com técnicas de visagismo para o homem contemporâneo.</p>
-                            </div>
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 45</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <div class="flex items-center gap-3">
-                                    <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Corte + Barba</h4>
-                                    <span class="text-[8px] bg-rose-500 text-black px-2 py-0.5 font-bold uppercase tracking-tighter rounded-sm">Popular</span>
-                                </div>
-                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Combo completo para renovar o visual com acabamento impecável.</p>
-                            </div>
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 70</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Modelagem de Barba</h4>
-                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Design e alinhamento de barba com toalha quente e produtos premium.</p>
-                            </div>
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 35</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Coloração de Barba</h4>
-                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Cobertura de fios brancos ou realce da cor natural da barba.</p>
-                            </div>
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 60</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
+                        <h4 class="text-2xl font-serif text-white mb-4 group-hover:text-rose-400 transition-colors">Coloração & Mechas</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-1">Técnicas avançadas de iluminação, balayage e colorimetria com produtos premium.</p>
+                        <div class="w-full flex items-center justify-between border-t border-white/10 pt-6 mt-auto">
+                            <span class="text-lg font-light text-rose-500 italic">a partir de R$ 130</span>
+                            <a href="https://wa.me/5511992876219" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-rose-500 hover:border-rose-500 transition-all group/btn">
+                                <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover/btn:rotate-0 transition-transform"></i>
+                            </a>
                         </div>
                     </div>
-                </div>
 
-                <!-- Category: Unisex / Comuns -->
-                <div class="reveal">
-                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 border-b border-white/10 pb-6 md:pb-8 gap-4 md:gap-6">
-                        <div>
-                            <span class="text-[10px] uppercase tracking-[0.5em] font-bold text-rose-500 mb-3 md:mb-4 block">03 / Bem-Estar & Cuidados</span>
-                            <h2 class="text-4xl md:text-6xl lg:text-7xl font-serif uppercase tracking-tighter text-white">Unisex <br> <span class="italic text-rose-500">& Comuns</span></h2>
+                    <!-- Service Card -->
+                    <div class="group relative bg-white/[0.02] border border-white/5 hover:border-rose-500/30 backdrop-blur-xl rounded-[2rem] p-8 flex flex-col items-start transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.15)] overflow-hidden">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-transparent border border-rose-500/20 flex items-center justify-center mb-8 text-rose-500 group-hover:scale-110 group-hover:bg-rose-500 group-hover:text-white transition-all duration-500">
+                            <i class="fa-solid fa-wind text-2xl"></i>
                         </div>
-                        <p class="text-gray-500 max-w-xs text-xs md:text-sm leading-relaxed italic">
-                            Cuidados essenciais e tratamentos profundos para manter sua imagem sempre impecável.
-                        </p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
-                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Hidratação Capilar</h4>
-                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Reposição de água e nutrientes para fios macios e brilhantes.</p>
-                            </div>
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 75</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Reconstrução / Cauterização</h4>
-                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Tratamento profundo para cabelos danificados ou quimicamente tratados.</p>
-                            </div>
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 95</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Manicure Tradicional</h4>
-                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Cuidado completo das unhas com esmaltação impecável.</p>
-                            </div>
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 35</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group py-6 md:py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <h4 class="text-xl md:text-2xl lg:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Pedicure Tradicional</h4>
-                                <p class="text-gray-500 text-xs md:text-sm max-w-xl leading-relaxed">Tratamento relaxante e estético para os pés.</p>
-                            </div>
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <span class="text-lg md:text-xl lg:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 40</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <div class="flex items-center gap-3">
-                                    <h4 class="text-2xl md:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Manicure + Pedicure</h4>
-                                    <span class="text-[8px] bg-rose-500 text-black px-2 py-0.5 font-bold uppercase tracking-tighter rounded-sm">Combo</span>
-                                </div>
-                                <p class="text-gray-500 text-sm max-w-xl leading-relaxed">Combo completo de cuidados para mãos e pés.</p>
-                            </div>
-                            <div class="flex items-center gap-6">
-                                <span class="text-xl md:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 70</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <h4 class="text-2xl md:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Design de Sobrancelhas</h4>
-                                <p class="text-gray-500 text-sm max-w-xl leading-relaxed">Harmonização do olhar com técnicas de medição facial.</p>
-                            </div>
-                            <div class="flex items-center gap-6">
-                                <span class="text-xl md:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 25</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <h4 class="text-2xl md:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Depilação com Cera</h4>
-                                <p class="text-gray-500 text-sm max-w-xl leading-relaxed">Remoção de pelos com cera morna (axilas / virilha / pernas).</p>
-                            </div>
-                            <div class="flex items-center gap-6">
-                                <span class="text-xl md:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 30</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <h4 class="text-2xl md:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Massagem Relaxante Capilar</h4>
-                                <p class="text-gray-500 text-sm max-w-xl leading-relaxed">Alívio de tensões com massagem estimulante no couro cabeludo.</p>
-                            </div>
-                            <div class="flex items-center gap-6">
-                                <span class="text-xl md:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 50</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <h4 class="text-2xl md:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Selagem / Progressiva</h4>
-                                <p class="text-gray-500 text-sm max-w-xl leading-relaxed">Alinhamento capilar e redução de volume com brilho intenso.</p>
-                            </div>
-                            <div class="flex items-center gap-6">
-                                <span class="text-xl md:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 150</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group py-8 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] px-4 transition-all">
-                            <div>
-                                <h4 class="text-2xl md:text-3xl font-serif text-white group-hover:text-rose-500 transition-colors uppercase tracking-tight">Tonalizante</h4>
-                                <p class="text-gray-500 text-sm max-w-xl leading-relaxed">Banho de brilho e realce da cor sem amônia.</p>
-                            </div>
-                            <div class="flex items-center gap-6">
-                                <span class="text-xl md:text-2xl font-light text-rose-500 tracking-tighter italic">a partir de R$ 80</span>
-                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-black transition-all">
-                                    <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                                </div>
-                            </div>
+                        <h4 class="text-2xl font-serif text-white mb-4 group-hover:text-rose-400 transition-colors">Escova & Finalização</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-1">Acabamento perfeito para ocasiões especiais ou alinhamento do dia a dia.</p>
+                        <div class="w-full flex items-center justify-between border-t border-white/10 pt-6 mt-auto">
+                            <span class="text-lg font-light text-rose-500 italic">a partir de R$ 45</span>
+                            <a href="https://wa.me/5511992876219" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-rose-500 hover:border-rose-500 transition-all group/btn">
+                                <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover/btn:rotate-0 transition-transform"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Masculino -->
+            <div class="mb-20 md:mb-28 reveal">
+                <div class="flex items-center gap-6 mb-12">
+                    <h3 class="text-3xl md:text-4xl font-serif text-white uppercase tracking-wider">Masculino</h3>
+                    <div class="h-[1px] flex-1 bg-gradient-to-r from-rose-500/50 to-transparent"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Service Card -->
+                    <div class="group relative bg-white/[0.02] border border-white/5 hover:border-rose-500/30 backdrop-blur-xl rounded-[2rem] p-8 flex flex-col items-start transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.15)] overflow-hidden">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-transparent border border-rose-500/20 flex items-center justify-center mb-8 text-rose-500 group-hover:scale-110 group-hover:bg-rose-500 group-hover:text-white transition-all duration-500">
+                            <i class="fa-solid fa-scissors text-2xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-serif text-white mb-4 group-hover:text-rose-400 transition-colors">Corte Clássico & Moderno</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-1">Cortes precisos com acabamento perfeito, adaptados ao seu estilo.</p>
+                        <div class="w-full flex items-center justify-between border-t border-white/10 pt-6 mt-auto">
+                            <span class="text-lg font-light text-rose-500 italic">a partir de R$ 45</span>
+                            <a href="https://wa.me/5511992876219" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-rose-500 hover:border-rose-500 transition-all group/btn">
+                                <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover/btn:rotate-0 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service Card -->
+                    <div class="group relative bg-white/[0.02] border border-white/5 hover:border-rose-500/30 backdrop-blur-xl rounded-[2rem] p-8 flex flex-col items-start transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.15)] overflow-hidden">
+                        <div class="absolute top-6 right-6 px-3 py-1 bg-rose-500 text-black text-[10px] font-bold uppercase tracking-wider rounded-full">Popular</div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-transparent border border-rose-500/20 flex items-center justify-center mb-8 text-rose-500 group-hover:scale-110 group-hover:bg-rose-500 group-hover:text-white transition-all duration-500">
+                            <i class="fa-solid fa-gem text-2xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-serif text-white mb-4 group-hover:text-rose-400 transition-colors">Corte + Barboterapia</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-1">O pacote completo com alinhamento de barba e toalha quente relaxante.</p>
+                        <div class="w-full flex items-center justify-between border-t border-white/10 pt-6 mt-auto">
+                            <span class="text-lg font-light text-rose-500 italic">a partir de R$ 70</span>
+                            <a href="https://wa.me/5511992876219" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-rose-500 hover:border-rose-500 transition-all group/btn">
+                                <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover/btn:rotate-0 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service Card -->
+                    <div class="group relative bg-white/[0.02] border border-white/5 hover:border-rose-500/30 backdrop-blur-xl rounded-[2rem] p-8 flex flex-col items-start transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.15)] overflow-hidden">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-transparent border border-rose-500/20 flex items-center justify-center mb-8 text-rose-500 group-hover:scale-110 group-hover:bg-rose-500 group-hover:text-white transition-all duration-500">
+                            <i class="fa-solid fa-tint text-2xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-serif text-white mb-4 group-hover:text-rose-400 transition-colors">Coloração de Barba</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-1">Cobertura uniforme de fios brancos com efeito natural e duradouro.</p>
+                        <div class="w-full flex items-center justify-between border-t border-white/10 pt-6 mt-auto">
+                            <span class="text-lg font-light text-rose-500 italic">a partir de R$ 60</span>
+                            <a href="https://wa.me/5511992876219" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-rose-500 hover:border-rose-500 transition-all group/btn">
+                                <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover/btn:rotate-0 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estética & Unhas -->
+            <div class="reveal">
+                <div class="flex items-center gap-6 mb-12">
+                    <h3 class="text-3xl md:text-4xl font-serif text-white uppercase tracking-wider">Estética & Cuidados</h3>
+                    <div class="h-[1px] flex-1 bg-gradient-to-r from-rose-500/50 to-transparent"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Service Card -->
+                    <div class="group relative bg-white/[0.02] border border-white/5 hover:border-rose-500/30 backdrop-blur-xl rounded-[2rem] p-8 flex flex-col items-start transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.15)] overflow-hidden">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-transparent border border-rose-500/20 flex items-center justify-center mb-8 text-rose-500 group-hover:scale-110 group-hover:bg-rose-500 group-hover:text-white transition-all duration-500">
+                            <i class="fa-solid fa-spa text-2xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-serif text-white mb-4 group-hover:text-rose-400 transition-colors">Hidratação / Reconstrução</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-1">Cronograma capilar completo para restauração profunda dos fios.</p>
+                        <div class="w-full flex items-center justify-between border-t border-white/10 pt-6 mt-auto">
+                            <span class="text-lg font-light text-rose-500 italic">a partir de R$ 75</span>
+                            <a href="https://wa.me/5511992876219" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-rose-500 hover:border-rose-500 transition-all group/btn">
+                                <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover/btn:rotate-0 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service Card -->
+                    <div class="group relative bg-white/[0.02] border border-white/5 hover:border-rose-500/30 backdrop-blur-xl rounded-[2rem] p-8 flex flex-col items-start transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.15)] overflow-hidden">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-transparent border border-rose-500/20 flex items-center justify-center mb-8 text-rose-500 group-hover:scale-110 group-hover:bg-rose-500 group-hover:text-white transition-all duration-500">
+                            <i class="fa-solid fa-hand-sparkles text-2xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-serif text-white mb-4 group-hover:text-rose-400 transition-colors">Manicure & Pedicure</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-1">Cuidado estético para mãos e pés com as melhores marcas de esmaltes.</p>
+                        <div class="w-full flex items-center justify-between border-t border-white/10 pt-6 mt-auto">
+                            <span class="text-lg font-light text-rose-500 italic">a partir de R$ 35</span>
+                            <a href="https://wa.me/5511992876219" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-rose-500 hover:border-rose-500 transition-all group/btn">
+                                <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover/btn:rotate-0 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service Card -->
+                    <div class="group relative bg-white/[0.02] border border-white/5 hover:border-rose-500/30 backdrop-blur-xl rounded-[2rem] p-8 flex flex-col items-start transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.15)] overflow-hidden">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-transparent border border-rose-500/20 flex items-center justify-center mb-8 text-rose-500 group-hover:scale-110 group-hover:bg-rose-500 group-hover:text-white transition-all duration-500">
+                            <i class="fa-solid fa-eye text-2xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-serif text-white mb-4 group-hover:text-rose-400 transition-colors">Design de Sobrancelhas</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-1">Mapeamento facial para um olhar simétrico, marcante e expressivo.</p>
+                        <div class="w-full flex items-center justify-between border-t border-white/10 pt-6 mt-auto">
+                            <span class="text-lg font-light text-rose-500 italic">a partir de R$ 25</span>
+                            <a href="https://wa.me/5511992876219" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-rose-500 hover:border-rose-500 transition-all group/btn">
+                                <i class="fa-solid fa-arrow-right transform -rotate-45 group-hover/btn:rotate-0 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-20 text-center reveal">
+                <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose px-10 py-5 rounded-lg inline-flex shadow-xl group">
+                    <span>Consultar Tabela Completa</span>
+                    <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -787,9 +692,9 @@
                     <h2 class="text-3xl md:text-5xl lg:text-6xl italic leading-tight">Transformações que Inspiram</h2>
                 </div>
                 <div class="hidden md:block">
-                    <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose btn-pulse px-8 py-4 rounded-lg">
+                    <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose px-8 py-4 rounded-lg group shadow-xl">
                         <span>Quero este Resultado</span>
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <i class="fa-solid fa-arrow-right text-lg transition-transform group-hover:translate-x-1"></i>
                     </a>
                 </div>
             </div>
@@ -1061,9 +966,9 @@
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose btn-pulse px-8 py-4 rounded-lg inline-block w-full text-center rose-glow">
+                    <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose px-8 py-4 rounded-lg flex justify-center items-center w-full text-center rose-glow group">
                         <span>Reservar meu Horário</span>
-                        <i class="fa-brands fa-whatsapp ml-2 text-lg"></i>
+                        <i class="fa-solid fa-arrow-right ml-2 text-lg transition-transform group-hover:translate-x-1"></i>
                     </a>
                 </div>
                 
@@ -1104,8 +1009,9 @@
                     <li><i class="fa-solid fa-envelope mr-2 text-rose-500"></i> contato@duno.com.br</li>
                     <li><i class="fa-solid fa-location-dot mr-2 text-rose-500"></i> Jardins, São Paulo</li>
                 </ul>
-                <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose btn-pulse px-6 py-3 rounded-lg text-[10px] w-full">
+                <a href="https://wa.me/5511992876219" target="_blank" class="btn-rose px-6 py-3 rounded-lg text-[10px] w-full flex justify-center items-center gap-2 group">
                     <span>Agendar pelo WhatsApp</span>
+                    <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
                 </a>
             </div>
         </div>
